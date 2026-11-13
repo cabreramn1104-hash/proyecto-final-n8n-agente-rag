@@ -1,0 +1,22 @@
+PROTOCOLO DE SEGURIDAD: PHISHING Y CUENTAS COMPROMETIDAS - Distribuidora del Sur S.A. (documento ficticio para el proyecto)
+
+1. Cómo reconocer un mail sospechoso
+- Te apura ("tu cuenta se cierra hoy"), pide contraseñas o datos bancarios, o trae adjuntos o links inesperados.
+- El remitente no coincide con el dominio de la empresa o tiene errores de escritura.
+
+2. Si recibiste un mail sospechoso y NO hiciste clic
+Usá el botón "Reportar phishing" de Outlook y borrá el mail. No hace falta abrir ticket.
+
+3. Si hiciste clic en un link o abriste un adjunto sospechoso
+Es un incidente de seguridad de prioridad alta.
+- Desconectá el equipo de la red (Wi-Fi apagado o cable desenchufado).
+- No apagues la computadora.
+- Avisá a IT de inmediato: una persona del equipo de seguridad te contacta.
+
+4. Si ingresaste tu usuario y contraseña en una página sospechosa
+Es un incidente de seguridad de prioridad crítica: la cuenta puede estar comprometida.
+- Cambiá la contraseña desde otro dispositivo de confianza, si podés.
+- Avisá a IT de inmediato para cerrar todas las sesiones y revisar accesos.
+
+5. Lo que IT nunca hace
+IT nunca pide contraseñas ni códigos de MFA. Cualquier pedido de ese tipo es un intento de fraude.

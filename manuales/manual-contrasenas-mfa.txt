@@ -1,0 +1,24 @@
+MANUAL DE CONTRASEÑAS Y MFA - Distribuidora del Sur S.A. (documento ficticio para el proyecto)
+
+1. Política de contraseñas
+- Mínimo 12 caracteres, con mayúsculas, minúsculas y números.
+- Vencen cada 90 días. El sistema avisa 10 días antes.
+- No se pueden repetir las últimas 5 contraseñas.
+- IT nunca te va a pedir tu contraseña por mail, chat ni teléfono.
+
+2. Cambiar la contraseña (autogestión)
+Paso 1: Entrá al portal de autogestión "Mi Cuenta" desde la intranet (sección Accesos rápidos).
+Paso 2: Elegí "Cambiar contraseña".
+Paso 3: Ingresá la contraseña actual y la nueva dos veces.
+Paso 4: Cerrá sesión en la computadora y volvé a entrar con la contraseña nueva.
+
+3. Olvidé la contraseña o la cuenta está bloqueada
+La cuenta se bloquea después de 5 intentos fallidos y se desbloquea sola a los 30 minutos.
+Si no querés esperar: en la pantalla de inicio de Windows elegí "¿Olvidaste tu contraseña?" y validá con el código de Microsoft Authenticator. Solo funciona si tenés el MFA configurado.
+Si no tenés MFA configurado o no tenés acceso al celular, hay que abrir un ticket: IT valida tu identidad por teléfono antes de resetear la contraseña.
+
+4. Configurar MFA en un celular nuevo
+El cambio de celular requiere que IT elimine el dispositivo anterior. Abrí un ticket indicando tu usuario. No borres la app del celular viejo hasta que IT te confirme.
+
+5. Si escribiste tu contraseña en un mail o chat
+Cambiala de inmediato desde "Mi Cuenta" y avisá a IT.

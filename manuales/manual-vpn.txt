@@ -1,0 +1,27 @@
+MANUAL DE VPN Y CONEXIÓN REMOTA - Distribuidora del Sur S.A. (documento ficticio para el proyecto)
+
+1. Para qué sirve la VPN
+La VPN permite acceder desde casa o desde otra sede al ERP, a las carpetas compartidas y a la intranet. El correo y Teams funcionan sin VPN.
+
+2. Cómo conectarse
+Paso 1: Abrí el programa "FortiClient VPN" desde el menú Inicio.
+Paso 2: En "Nombre de VPN" elegí "DDS-Remoto".
+Paso 3: Ingresá tu usuario de red (el mismo de la computadora, sin @distribuidoradelsur.com) y tu contraseña.
+Paso 4: Aprobá la notificación de MFA en la app Microsoft Authenticator del celular.
+Paso 5: Cuando aparezca "Conectado", ya podés abrir el ERP.
+
+3. Error "Servidor inaccesible" o la conexión se queda en 40%
+- Verificá que tengas internet abriendo cualquier página web.
+- Si estás en una red pública (bar, hotel, aeropuerto), probá con los datos del celular: muchas redes públicas bloquean la VPN.
+- Cerrá FortiClient por completo (clic derecho en el ícono junto al reloj → "Salir") y volvé a abrirlo.
+- Reiniciá la computadora.
+Si después de estos pasos sigue sin conectar, hay que abrir un ticket indicando el mensaje exacto de error y desde qué red te conectás.
+
+4. Error "Credenciales inválidas"
+Es la misma contraseña de la computadora. Si la cambiaste hace poco, esperá 15 minutos a que se sincronice. Si la contraseña está vencida o bloqueada, seguí el manual de contraseñas y MFA.
+
+5. No me llega la notificación de MFA
+Abrí la app Microsoft Authenticator manualmente y revisá si la solicitud está pendiente. Si cambiaste de celular, el MFA tiene que reconfigurarlo IT: abrí un ticket.
+
+6. Qué NO hacer
+No instales otros programas de VPN ni extensiones de "VPN gratis" en el equipo de la empresa. No compartas tu usuario de VPN con otra persona.

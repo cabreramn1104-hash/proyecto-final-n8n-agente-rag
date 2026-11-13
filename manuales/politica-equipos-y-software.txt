@@ -1,0 +1,17 @@
+POLÍTICA DE EQUIPOS Y SOFTWARE - Distribuidora del Sur S.A. (documento ficticio para el proyecto)
+
+1. Software permitido
+Los empleados pueden instalar por su cuenta, desde el "Centro de Software" (ícono en el escritorio), cualquier programa del catálogo aprobado: navegador Chrome, Zoom, Adobe Reader, 7-Zip, Notepad++ y Power BI Desktop.
+Cualquier programa que no esté en el Centro de Software requiere permisos de administrador y aprobación del jefe del área: hay que abrir un ticket indicando el nombre del programa y para qué se necesita.
+
+2. Microsoft Office y Teams
+Office y Teams vienen instalados en todos los equipos. Si Office pide activación, cerrá sesión de Office (Archivo → Cuenta → Cerrar sesión) y volvé a entrar con tu mail corporativo.
+
+3. Fallas de hardware
+Si el equipo tiene una falla física (pantalla rota, teclado que no responde, batería que no carga, ruidos, golpes o derrame de líquido), no intentes abrirlo ni repararlo. Abrí un ticket: IT evalúa si se repara o se reemplaza y coordina un equipo de préstamo si hace falta.
+
+4. Pedidos de equipos nuevos o periféricos
+Monitores, mouse, teclados, auriculares y notebooks nuevas se piden por ticket con aprobación del jefe del área.
+
+5. Equipo perdido o robado
+Es un incidente de seguridad. Avisá a IT de inmediato para bloquear el equipo y las sesiones abiertas, y hacé la denuncia correspondiente.

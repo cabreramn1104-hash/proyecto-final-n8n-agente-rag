@@ -1,0 +1,6 @@
+email,nombre,area,sede,rol,activo
+ana.gomez@distribuidoradelsur.com,Ana Gómez,Administración,Central,Analista,SI
+lucas.perez@distribuidoradelsur.com,Lucas Pérez,Logística,Depósito Norte,Supervisor,SI
+carla.diaz@distribuidoradelsur.com,Carla Díaz,Ventas,Central,Vendedora,SI
+martin.rios@distribuidoradelsur.com,Martín Ríos,Compras,Central,Comprador,NO
+REEMPLAZAR_CON_TU_EMAIL_DE_PRUEBA,Milagros Cabrera,Sistemas,Central,Analista,SI

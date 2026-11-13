@@ -1,0 +1,22 @@
+MANUAL DE IMPRESORAS - Distribuidora del Sur S.A. (documento ficticio para el proyecto)
+
+1. Impresoras disponibles
+Cada sede tiene impresoras multifunción en red con el nombre IMP-<SEDE>-<PISO>, por ejemplo IMP-CENTRAL-2.
+
+2. Agregar una impresora a la computadora
+Paso 1: Abrí Configuración → Dispositivos → Impresoras y escáneres.
+Paso 2: Hacé clic en "Agregar dispositivo" y esperá a que aparezca la lista.
+Paso 3: Elegí la impresora de tu piso (IMP-<SEDE>-<PISO>). No hace falta instalar drivers: se instalan solos.
+
+3. Mandé a imprimir y no sale
+- Revisá en la pantalla de la impresora si falta papel o hay un atasco.
+- En la computadora, abrí la cola de impresión (doble clic sobre la impresora) y cancelá los documentos trabados.
+- Verificá que estés imprimiendo en la impresora de tu piso y no en una de otra sede.
+- Reiniciá la computadora.
+Si la impresora muestra un error en pantalla (por ejemplo "Error de fusor" o "Llamar al servicio técnico"), no la apagues y abrí un ticket con el código de error: la reparación la hace el proveedor.
+
+4. Tóner
+El recambio de tóner lo gestiona IT. Cuando la impresora avise "Tóner bajo", abrí un ticket con el nombre de la impresora.
+
+5. Escanear a mail
+En la pantalla de la impresora: Escanear → Correo electrónico → elegí tu nombre de la libreta. El archivo llega como PDF a tu casilla.

@@ -1,0 +1,204 @@
+{
+  "name": "Proyecto Final · Alertas de error",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "## Alertas de errores no controlados\nSe configura como **Error Workflow** del workflow principal (Settings → Error workflow).\nAtrapa lo que no cubren las salidas de error: credenciales vencidas de Google, un nodo mal configurado, un timeout de n8n. Avisa por mail y deja registro en la hoja *Errores*.",
+        "height": 220,
+        "width": 900,
+        "color": 3
+      },
+      "id": "50700dd9-a38a-47af-850c-4df0491f9d30",
+      "name": "Nota 1",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -60,
+        -260
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "4e136fa8-ebb3-40d1-8f20-8f4bf3d741a1",
+      "name": "Error Trigger",
+      "type": "n8n-nodes-base.errorTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        60
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "const e = $json.execution ?? {};\nreturn {\n  json: {\n    fecha: new Date().toISOString(),\n    workflow: $json.workflow?.name ?? '(desconocido)',\n    ejecucion_id: e.id ?? '',\n    url: e.url ?? '',\n    nodo: e.lastNodeExecuted ?? e.error?.node?.name ?? '',\n    modo: e.mode ?? '',\n    mensaje: String(e.error?.message ?? 'sin mensaje').slice(0, 500)\n  }\n};"
+      },
+      "id": "15918660-905f-4f6d-83f9-a8d2ae13349f",
+      "name": "Formatear alerta",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        220,
+        60
+      ]
+    },
+    {
+      "parameters": {
+        "sendTo": "mesa-de-ayuda@distribuidoradelsur.com",
+        "subject": "=[ALERTA n8n] Falló {{ $json.workflow }} en el nodo {{ $json.nodo }}",
+        "emailType": "text",
+        "message": "=Fecha: {{ $json.fecha }}\nWorkflow: {{ $json.workflow }}\nNodo: {{ $json.nodo }}\nModo: {{ $json.modo }}\nError: {{ $json.mensaje }}\nEjecución: {{ $json.url }}",
+        "options": {
+          "appendAttribution": false
+        }
+      },
+      "id": "33edef79-7dbb-48f6-acf4-41076008e924",
+      "name": "Avisar al administrador",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        460,
+        -40
+      ],
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "REEMPLAZAR_ID_PLANILLA_SOPORTE",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "Errores",
+          "mode": "name"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "fecha": "={{ $json.fecha }}",
+            "workflow": "={{ $json.workflow }}",
+            "ejecucion_id": "={{ $json.ejecucion_id }}",
+            "nodo": "={{ $json.nodo }}",
+            "modo": "={{ $json.modo }}",
+            "mensaje": "={{ $json.mensaje }}",
+            "url": "={{ $json.url }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "fecha",
+              "displayName": "fecha",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "workflow",
+              "displayName": "workflow",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "ejecucion_id",
+              "displayName": "ejecucion_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "nodo",
+              "displayName": "nodo",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "modo",
+              "displayName": "modo",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "mensaje",
+              "displayName": "mensaje",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "url",
+              "displayName": "url",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "a1f1748f-af7f-4f42-bcc6-01a168c4d1e2",
+      "name": "Registrar en Errores",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        460,
+        160
+      ],
+      "onError": "continueRegularOutput"
+    }
+  ],
+  "connections": {
+    "Error Trigger": {
+      "main": [
+        [
+          {
+            "node": "Formatear alerta",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Formatear alerta": {
+      "main": [
+        [
+          {
+            "node": "Avisar al administrador",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Registrar en Errores",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "pinData": {},
+  "tags": []
+}
