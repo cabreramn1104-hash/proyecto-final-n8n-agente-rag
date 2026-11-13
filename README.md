@@ -4,9 +4,9 @@
 
 Sistema de Mesa de Ayuda de primer nivel para **Distribuidora del Sur S.A.** (empresa ficticia, ~250 empleados). Recibe consultas de IT por un **formulario web (webhook)** y por **mail (Gmail)**, valida al empleado contra **Google Sheets**, recupera los fragmentos relevantes de los manuales internos desde **Supabase (pgvector)** y un **AI Agent con Ollama (llama3.2:3b, local)** decide qué hacer: **responder** con los pasos del manual, **crear un ticket**, **derivar a una persona** o marcar la consulta como **fuera de alcance**. Todo queda registrado en Sheets y la respuesta vuelve por el mismo canal.
 
-![Canvas del workflow: entradas y validación](capturas/01-canvas-completo-a.png)
-![Canvas del workflow: RAG y agente](capturas/01-canvas-completo-b.png)
-![Canvas del workflow: control y salida](capturas/01-canvas-completo-c.png)
+![Canvas del workflow: entradas y validación](capturas/01-canvas-completo-a.png.png)
+![Canvas del workflow: RAG y agente](capturas/01-canvas-completo-b.png.png)
+![Canvas del workflow: control y salida](capturas/01-canvas-completo-c.png.png)
 
 ## Contenido
 
@@ -445,35 +445,35 @@ Consulta enviada por el webhook: *"Estoy en casa y la VPN me dice Servidor inacc
 
 **1 · Canvas completo**
 
-![Canvas: entradas y validación](capturas/01-canvas-completo-a.png)
-![Canvas: RAG y agente](capturas/01-canvas-completo-b.png)
-![Canvas: control y salida](capturas/01-canvas-completo-c.png)
+![Canvas: entradas y validación](capturas/01-canvas-completo-a.png.png)
+![Canvas: RAG y agente](capturas/01-canvas-completo-b.png.png)
+![Canvas: control y salida](capturas/01-canvas-completo-c.png.png)
 
 **2 · Manuales indexados en Supabase (tabla `documents`)**
 
-![Ingesta](capturas/02-ingesta-supabase.png)
+![Ingesta](capturas/02-ingesta-supabase.png.png)
 
 **3 · Ejecución exitosa: camino de respuesta automática**
 
-![Responder](capturas/03-ejecucion-responder.png)
+![Responder](capturas/03-ejecucion-responder.png.png)
 
 **4 · Salida del nodo *Validar respuesta del agente***
 
-![Salida agente: datos de la consulta](capturas/04-salida-agente-a.png)
-![Salida agente: contexto y decisión](capturas/04-salida-agente-b.png)
-![Salida agente: clasificación y validación](capturas/04-salida-agente-c.png)
-![Salida agente: respuesta al empleado](capturas/04-salida-agente-e.png)
+![Salida agente: datos de la consulta](capturas/04-salida-agente-a.png.png)
+![Salida agente: contexto y decisión](capturas/04-salida-agente-b.png.png)
+![Salida agente: clasificación y validación](capturas/04-salida-agente-c.png.png)
+![Salida agente: respuesta al empleado](capturas/04-salida-agente-e.png.png)
 
 **6 · Manejo de error: el modelo de 1B no devuelve el JSON y el flujo deriva a la Mesa de Ayuda**
 
-![Error: camino de fallback](capturas/06-manejo-de-error-a.png)
-![Error: parser](capturas/06-manejo-de-error-b.png)
+![Error: camino de fallback](capturas/06-manejo-de-error-a.png.png)
+![Error: parser](capturas/06-manejo-de-error-b.png.png)
 
 En esta ejecución el nodo todavía se llamaba *Ollama · llama3.1:8b*, pero el modelo elegido era `llama3.2:1b`. La misma ejecución sirve como ejemplo de **derivación a una persona**.
 
 **7 · Registro en Google Sheets (hoja `Registro_Consultas`)**
 
-![Sheets](capturas/07-registro-sheets.png)
+![Sheets](capturas/07-registro-sheets.png.png)
 
 ---
 
